@@ -9,9 +9,6 @@ import { login } from "app/utils"
 
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
-  const handleToggle = e => {
-    setShowPassword(e.currentTarget.checked)
-  }
 
   return (
     <form>
@@ -41,7 +38,7 @@ export default function LoginForm() {
             className="passwordCheckbox"
             type="checkbox"
             defaultChecked={false}
-            onChange={handleToggle}
+            onChange={e => setShowPassword(e.currentTarget.checked)}
           />{" "}
           show password
         </label>
